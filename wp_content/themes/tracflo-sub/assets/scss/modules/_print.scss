@@ -1,0 +1,179 @@
+/******************************************************************
+
+Stylesheet: Print
+
+******************************************************************/
+
+* {
+	xbackground: transparent !important;
+	color: black !important;
+	text-shadow: none !important;
+	filter: none !important;
+	-ms-filter: none !important;
+}
+
+a {
+	color: #444 !important;
+	text-decoration: underline;
+
+	// show links on printed pages
+	&:after {
+	  content: " (" attr(href) ")";
+	}
+
+	// show title too
+	abbr[title]:after {
+	  content: " (" attr(title) ")";
+	}
+}
+
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+	content: '';
+}
+
+.pdf-output {
+	a:after {
+		content: '';
+	}
+}
+
+pre, blockquote {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
+
+thead {
+	display: table-header-group;
+}
+
+tr, img {
+	page-break-inside: avoid;
+}
+
+img {
+	max-width: 100% !important;
+}
+
+@page {
+	margin: 0.5cm;
+}
+
+p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+}
+
+h2,
+h3 {
+	page-break-after: avoid;
+}
+
+.client-document-container {
+	border: none;
+	padding: 0;
+}
+
+.client-shell-in-app {
+	box-shadow: none;
+}
+
+.tabs-v4 {
+	border: none !important;
+
+	& a {
+		display: none !important;
+
+		&:after {
+			display: none;
+		}
+
+		&.is-active {
+			border: none;
+			display: block !important;
+			font-size: 1.3125rem !important;	
+			font-weight: bold;
+			padding: 0 !important;
+		}
+	}
+}
+
+.invoices-big-data {
+	height: auto !important;
+	width: auto !important;
+
+	& > div {
+		border: none !important;
+		display: inline-block;
+		height: auto !important;
+		padding: $gutter !important;
+	}
+}
+
+.table {
+	& a {
+		&:after {
+			display: none;
+		}
+	}
+}
+
+.col-name {
+	width: 15%;
+}
+
+.col-meter {
+	width: 10%;
+}
+
+.col-action {
+	display: none;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+}
+
+.project-overview-table {
+	& .col-job_number {
+		padding-left: 0;
+		width: 5%;
+	}
+	& .col-start_date {
+		padding-right: 0;
+		width: 6%;
+	}
+}
+
+.filter-menu {
+	& > button {
+		border: none !important;
+		& svg {
+			display: none !important;
+		}
+		&::before {
+			content: "Filter: ";
+			display: inline-block;
+			padding-left: 3px;
+		}
+	}
+}
+
+// hide content that people who print don't need to see
+.dashboard-recent-activity,
+#invoice_header,
+#activity_log,
+#footer,
+.invoice-action-buttons,
+.subject-message,
+.activity-message,
+.client-edit-header,
+.do-not-print,
+.sidebar,
+.page-navigation,
+.wp-prev-next,
+.respond-form,
+nav {
+	display: none;
+}

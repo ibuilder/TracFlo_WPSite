@@ -1,0 +1,16 @@
+.PageHeader {
+	text-align: left;
+	width: 100%;
+	z-index: 9999;
+
+	&-wrap {
+		background: $blue;
+		height: ($margin * 2);
+		position: relative;
+		z-index: 9999;
+	}
+
+	@include breakpoint(medium) {
+		
+	}
+}

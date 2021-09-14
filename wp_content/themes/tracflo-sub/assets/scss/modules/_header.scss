@@ -1,0 +1,45 @@
+/******************************************************************
+
+Stylesheet: Header
+
+******************************************************************/
+
+#header {
+	background: $blue;
+	text-align: center;
+
+	#inner-header {
+		position: relative;
+	}
+
+	#logo {
+		margin: 0 auto;
+		padding: $margin;
+		max-width: 199px;
+
+		a, img {
+			display: block;
+			width: 100%;
+		}
+
+		a:hover {
+			opacity: .7;
+		}
+	}
+
+	@include breakpoint(medium)
+	{
+		text-align: left;
+
+		#inner-header {
+			padding-left: 0;
+		}
+
+		#logo {
+			float: left;
+			margin: 0;
+			padding-left: 0;
+			width: 30%;
+		}
+	}
+}

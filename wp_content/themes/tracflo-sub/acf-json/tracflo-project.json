@@ -1,0 +1,241 @@
+{
+    "key": "tracflo-project",
+    "title": "Project Information",
+    "fields": [
+        {
+            "key": "field_58d4ca46ac178",
+            "label": "Client",
+            "name": "client",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "post_type": [
+                "client"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_58d52a694b71a",
+            "label": "Project #",
+            "name": "number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2 is-start",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58e8ff17bc083",
+            "label": "Start Date",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_5aaa6ec5eb937",
+            "label": "Manager",
+            "name": "manager",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_3 is-start",
+                "id": ""
+            },
+            "role": [
+                "trac_pm"
+            ],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "array"
+        },
+        {
+            "key": "field_5caf61bb4c4c3",
+            "label": "Team",
+            "name": "team",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-2_3",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Team",
+            "sub_fields": [
+                {
+                    "key": "field_5caf61e44c4c4",
+                    "label": "Foreman",
+                    "name": "foreman",
+                    "type": "user",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "role": [
+                        "trac_foreman"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_5caf62174c4c5",
+                    "label": "Workers",
+                    "name": "workers",
+                    "type": "user",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "role": [
+                        "trac_worker"
+                    ],
+                    "allow_null": 1,
+                    "multiple": 1,
+                    "return_format": "id"
+                }
+            ]
+        },
+        {
+            "key": "field_58d4caab1d31f",
+            "label": "Address",
+            "name": "address",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_3 is-start is-emptyDescription",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5b5875622ca20",
+            "label": "Uploads",
+            "name": "uploads",
+            "type": "repeater",
+            "instructions": "Add documents to backup (estimate, project notes, scope, etc)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-2_3",
+                "id": ""
+            },
+            "collapsed": "field_5b58761b2ca22",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Upload",
+            "sub_fields": [
+                {
+                    "key": "field_5b5875cd2ca21",
+                    "label": "File",
+                    "name": "file",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "pdf,doc,docx,jpg,jpeg"
+                },
+                {
+                    "key": "field_5b58761b2ca22",
+                    "label": "Description",
+                    "name": "content",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1494432195
+}

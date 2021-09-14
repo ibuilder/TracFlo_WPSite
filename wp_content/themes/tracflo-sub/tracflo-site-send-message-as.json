@@ -1,0 +1,59 @@
+
+        {
+            "key": "field_5a245bb64ecf7",
+            "label": "Send Messages As",
+            "name": "company_emails",
+            "type": "repeater",
+            "instructions": "Set up different email addresses to send your change orders and invoices.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5a245c314ecf9",
+            "min": 1,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Email",
+            "sub_fields": [
+                {
+                    "key": "field_5a245c2a4ecf8",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a245c314ecf9",
+                    "label": "Email",
+                    "name": "email",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },

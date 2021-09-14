@@ -1,0 +1,495 @@
+/******************************************************************
+
+Stylesheet: WP Editor Stylesheet 
+
+******************************************************************/
+/*********************
+REMOVES MEDIA QUERIES
+*********************/
+/*********************
+IMPORTING MODULES
+*********************/
+/******************************************************************
+
+Stylesheet: Mixins
+
+******************************************************************/
+/*********************
+FONT STACKS
+*********************/
+/*********************
+Grid gutter width
+*********************/
+/*********************
+Default bottom margin
+
+This is used for paragraphs, 
+lists, and pretty much everywhere 
+as a base to help with vertical rhythm
+*********************/
+/*********************
+The golden ratio
+*********************/
+/*********************
+COLORS
+*********************/
+/*********************
+REUSABLE ITEMS
+*********************/
+/*********************
+BUTTONS
+*********************/
+.button-primary, #wp-submit,
+.search-submit,
+.form-submit input,
+.button {
+  background-color: #fafafa;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background-image: linear-gradient(#fff, #eee);
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  color: #555 !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  height: 31px;
+  line-height: 28px;
+  padding: 0 13px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  text-decoration: none !important;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto; }
+  .button-primary .icon, #wp-submit .icon, .search-submit .icon, .form-submit input .icon, .button .icon {
+    float: right;
+    height: 12px;
+    width: 12px;
+    margin: 8px 0 0 8px; }
+  .button-primary:hover, #wp-submit:hover,
+  .search-submit:hover,
+  .form-submit input:hover,
+  .button:hover, .button-primary:focus, #wp-submit:focus,
+  .search-submit:focus,
+  .form-submit input:focus,
+  .button:focus {
+    background-color: #f0f0f0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#e8e8e8));
+    background-image: linear-gradient(#f8f8f8, #e8e8e8);
+    text-decoration: none; }
+  .button-primary:active, #wp-submit:active,
+  .search-submit:active,
+  .form-submit input:active,
+  .button:active {
+    background: #eee;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
+  .is-active.button-primary, .is-active#wp-submit,
+  .is-active.search-submit,
+  .form-submit input.is-active,
+  .is-active.button {
+    background: #eaeaea !important;
+    border-color: #bbb !important;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+    cursor: default !important;
+    outline: 0;
+    text-shadow: 0 1px 0 #fff !important;
+    z-index: 1; }
+
+.button-primary {
+  background-color: #2e8d11;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#72c152), to(#2e8d11));
+  background-image: linear-gradient(#72c152, #2e8d11);
+  border-color: #237c07;
+  color: #fff !important;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4); }
+  .button-primary:hover, .button-primary:focus {
+    background-color: #28880a;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#66b746), to(#28880a));
+    background-image: linear-gradient(#66b746, #28880a); }
+  .button-primary:active {
+    background: #2e8d11;
+    -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2); }
+
+/*********************
+BREAKPOINTS
+*********************/
+/******************************************************************
+
+Stylesheet: Fonts
+
+******************************************************************/
+/************************************************
+Better support for screen readers with icons
+see header.php for an example usage
+************************************************/
+.screen-reader-text {
+  left: -9999em !important;
+  position: absolute !important;
+  top: -9999em !important; }
+
+/*********************
+FONT FACE
+*********************/
+/* @font-face {
+  font-family: 'Font Name';
+  src: url('../fonts/font-name.eot');
+  src: url('../fonts/font-name.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/font-name.woff') format('woff'),
+         url('../fonts/font-name.ttf') format('truetype'),
+         url('../fonts/font-name.svg#font-name') format('svg');
+  font-weight: normal;
+  font-style: normal;
+} 
+*/
+@font-face {
+  font-family: 'patchwerk';
+  src: url("../fonts/patchwerk/patchwerk.eot?-46w803");
+  src: url("../fonts/patchwerk/patchwerk.eot?#iefix-46w803") format("embedded-opentype"), url("../fonts/patchwerk/patchwerk.woff?-46w803") format("woff"), url("../fonts/patchwerk/patchwerk.ttf?-46w803") format("truetype"), url("../fonts/patchwerk/patchwerk.svg?-46w803#patchwerk") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'patchwerk';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-info:before {
+  content: "\e60f"; }
+
+.icon-git:before {
+  content: "\e609"; }
+
+.icon-phone:before {
+  content: "\50"; }
+
+.icon-menu:before {
+  content: "\e601"; }
+
+.icon-close:before {
+  content: "\e606"; }
+
+.icon-googleplus:before {
+  content: "\e604"; }
+
+.icon-facebook:before {
+  content: "\e605"; }
+
+.icon-twitter:before {
+  content: "\e60a"; }
+
+.icon-feed:before {
+  content: "\e607"; }
+
+.icon-wordpress:before {
+  content: "\e600"; }
+
+.icon-linkedin:before {
+  content: "\e60b"; }
+
+.icon-pinterest:before {
+  content: "\e60c"; }
+
+.icon-mail:before {
+  content: "\e608"; }
+
+.icon-share:before {
+  content: "\e602"; }
+
+.icon-search:before {
+  content: "\e603"; }
+
+.icon-arrow-left:before {
+  content: "\e60d"; }
+
+.icon-arrow-right:before {
+  content: "\e60e"; }
+
+/******************************************************************
+
+Stylesheet: Typography
+
+Some Guidelines:
+
+- Do yourself a favor, and only use these target pixel sizes: 5, 7, 9, 12, 16, 21, 28, 37, 50, 67, 83
+	These sizes are based off of the proportion of 3:4
+	
+	If one of these sizes isn't quite achieving the effect you want, there are tons of other things you 
+	can do: use bold or italics, use all-caps (for titling and metadata), or use a different color. Stick 
+	with these sizes, and worry about something else.
+
+- Never More Than Fifteen Words on a Line
+
+http://webdesign.tutsplus.com/articles/9-quick-wins-for-halfway-decent-design--cms-19444
+
+- Pay attention to the Vertical Rhythm
+
+http://webdesign.tutsplus.com/articles/improving-layout-with-vertical-rhythm--webdesign-14070
+
+******************************************************************/
+/******************************************************************
+FONT BASE
+******************************************************************/
+body {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #333; }
+
+svg {
+  fill: currentColor; }
+  svg.icon {
+    display: inline-block;
+    vertical-align: baseline; }
+  svg use {
+    pointer-events: none; }
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  clear: both;
+  margin: 0 0 1.5rem; }
+  h1 a, h1 a:visited, .h1 a, .h1 a:visited, h2 a, h2 a:visited, .h2 a, .h2 a:visited, h3 a, h3 a:visited, .h3 a, .h3 a:visited, h4 a, h4 a:visited, .h4 a, .h4 a:visited, h5 a, h5 a:visited, .h5 a, .h5 a:visited {
+    text-decoration: none; }
+
+h1, .h1 {
+  font-size: 1.5rem;
+  line-height: 1.243243243; }
+
+h2, .h2 {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  margin-bottom: 1.071428571rem; }
+
+h3, .h3 {
+  font-size: 1.3125rem;
+  line-height: 1.5;
+  margin-bottom: .785714286em; }
+
+h4, .h4 {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: bold; }
+
+h5, .h5 {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+/******************************************************************
+PARAGRAPH PAGE BREAKS
+
+Currently this configuration has a bad effect on IE11, but are here 
+as a reference for pagebreak customization
+****************************************************************** /
+
+p {
+  -ms-word-break: break-all;
+   -ms-word-wrap: break-all;
+      word-break: break-word;
+  // cleaning up the ragged lines and breaks
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+  // sets a minimum number of characters before and after the break
+  -webkit-hyphenate-before: 2;
+   -webkit-hyphenate-after: 3;
+           hyphenate-lines: 3;
+  // enabling fancy ligatures when available
+  -webkit-font-feature-settings: "liga", "dlig";
+     -moz-font-feature-settings: "liga=1, dlig=1";
+      -ms-font-feature-settings: "liga", "dlig";
+       -o-font-feature-settings: "liga", "dlig";
+          font-feature-settings: "liga", "dlig";
+}
+
+
+/******************************************************************
+BASE ELEMENTS
+******************************************************************/
+p {
+  margin: 0 0 1.5rem; }
+
+dfn, cite, em, i {
+  font-style: italic; }
+
+blockquote {
+  margin: 0 0 1.5rem 1em;
+  padding: 0 0 0 1em;
+  border-left: 3px solid #333;
+  font-style: italic;
+  color: #999; }
+
+address {
+  margin: 0 0 1.5rem; }
+
+pre {
+  background: #222;
+  color: #EEF0F4;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 0.9em;
+  margin: 0 0 1.5rem;
+  max-width: 100%;
+  padding: 1em;
+  overflow: auto; }
+
+abbr, acronym {
+  cursor: help; }
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+/******************************************************************
+ENTRY CONTENT
+******************************************************************/
+.entry-content ul, .entry-content ol {
+  margin: 0 0 1.5rem 1.5rem; }
+
+.entry-content ul {
+  list-style: disc; }
+
+.entry-content ol {
+  list-style: decimal; }
+
+.entry-content li > ul,
+.entry-content li > ol {
+  margin-bottom: 0;
+  margin-left: 1em; }
+
+.entry-content dt {
+  font-weight: bold; }
+
+.entry-content dd {
+  margin: 0 1em 1.5rem; }
+
+.entry-content table {
+  margin: 0 0 1.5rem;
+  width: 100%; }
+
+.entry-content th {
+  font-weight: bold; }
+
+/* end .entry-content */
+/******************************************************************
+CUSTOM
+******************************************************************/
+.is-small {
+  font-size: 0.8em; }
+
+/******************************************************************
+
+Stylesheet: WP Images
+
+******************************************************************/
+/******************************************************************
+ENTRY CONTENT IMAGES
+******************************************************************/
+.entry-content img {
+  height: auto;
+  margin: 0 0 1.5rem;
+  max-width: 100%; }
+
+/* end .entry-content */
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto; }
+
+.alignleft, img.alignleft, figure.alignleft, dl.alignleft {
+  display: inline;
+  float: left;
+  margin-left: 0em;
+  margin-right: 1.5rem; }
+
+.alignright, img.alignright, figure.alignright, dl.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5rem;
+  margin-right: 0em; }
+
+.aligncenter, img.aligncenter, figure.aligncenter, dl.aligncenter {
+  clear: both;
+  display: block;
+  margin-right: auto;
+  margin-left: auto; }
+
+.alignnone, img.alignnone, figure.alignnone, dl.alignnone, .alignnone img {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: auto; }
+
+/******************************************************************
+CAPTIONS
+******************************************************************/
+.wp-caption {
+  max-width: 100%;
+  background: #EEF0F4;
+  font-size: 0.75em;
+  padding: 0.333333333em 0;
+  text-align: center;
+  /* images inside wp-caption */ }
+  .wp-caption.alignleft {
+    margin-right: 1.5rem; }
+  .wp-caption.alignright {
+    margin-left: 1.5rem; }
+  .wp-caption.aligncenter {
+    margin-right: auto;
+    margin-left: auto; }
+  .wp-caption img {
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%; }
+  .wp-caption p.wp-caption-text {
+    font-size: 0.9em;
+    margin: 4px 0 7px;
+    text-align: center; }
+
+/******************************************************************
+HTML5 IMAGE GALLERY
+******************************************************************/
+.gallery {
+  text-align: justify; }
+  .gallery .gallery-item {
+    margin: 0;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: .5em; }
+  .gallery img {
+    display: block;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0); }
+  .gallery .gallery-caption {
+    text-align: left;
+    padding: .25em 0; }
+  .gallery:after {
+    content: '';
+    display: inline-block;
+    width: 100%; }
+  .gallery .gallery-item {
+    width: 25%; }
+  .gallery img:hover {
+    opacity: .7;
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease; }

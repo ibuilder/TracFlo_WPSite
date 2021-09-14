@@ -1,0 +1,61 @@
+.NavSettings {
+	display: block;
+	float: right;
+	margin-bottom: $gutter;
+	width: 100%;
+
+	& a {
+		color: $white;
+		font-weight: 300;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+
+	&-list {
+		list-style: none;
+		margin: 0;
+		padding: 0 $gutter;
+		text-align: left;
+	
+		& li {
+			padding: 0;
+		}
+
+		&::after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+	}
+
+	@include breakpoint(medium) {
+		display: inline-block;
+		float: right;
+		font-size: 0.875em;
+		font-weight: bold;
+		margin: 0;
+		padding: 0.3125rem 0 0;
+		text-align: right;
+		width: auto;
+
+		&-list {
+			display: inline-block;
+			padding: 0 3px;
+			text-align: center;
+			text-transform: uppercase;
+
+			& li {
+				display: inline-block;
+				padding: 0;
+			}
+
+			& a {
+				display: inline-block;
+			}
+		}
+	}
+}

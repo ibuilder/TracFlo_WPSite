@@ -1,0 +1,48 @@
+#activity_log {
+	color: #333;
+	line-height: 18px;
+	margin-top: 40px;
+	padding: 0 35px 20px;
+
+	& h2 {
+		padding: 10px;
+	}
+	
+	& table.activity-items {
+		border-top: 1px solid #ccc;
+		clear: both;
+	
+		& tr {
+			& td {
+			    border-bottom: 1px solid #ccc;
+			    padding: 9px 20px 11px 7px;
+			    width: 80px;
+
+				& img {
+					max-width: 300px;
+					width: 100%;
+				}
+			
+				&.notes {
+				    line-height: 16px;
+				    padding-top: 11px;
+				    width: auto;
+				
+					& .meta {
+					    display: block;
+					    color: #999;
+					    font-size: 11px;
+					    line-height: 16px;
+					}
+				}
+
+				&.control {
+				    padding-right: 10px;
+				    text-align: right;
+				    white-space: nowrap;
+				    width: 100px;
+				}
+			}
+		}
+	}
+}

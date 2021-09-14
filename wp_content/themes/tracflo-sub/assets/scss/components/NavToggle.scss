@@ -1,0 +1,90 @@
+.NavToggle {
+	background: transparent;
+	border: 0px solid white;
+	border-radius: 50%;
+	box-shadow: none;
+	cursor: pointer;
+	display: block;
+	float: right;
+	font-size: 0;
+	height: 48px;
+	left: 0;
+	margin: 0 0 0 4px;
+	overflow: hidden;
+	position: absolute;
+	padding: 0;
+	text-indent: -9999em;
+	top: 0;
+	transition: all 0.3s ease-in-out;
+	width: 48px;
+	z-index: 1000;
+
+	& span {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%) rotateY(0deg);
+
+		&,
+		&::before,
+		&::after {
+			background-color: white;
+			display: block;
+			height: 2px;
+			position: absolute;
+			transition: transform 0.3s cubic-bezier(.645,.045,.355,1), background-color 0.3s linear;
+			width: 30px;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			left: 0;
+			width: 25px;
+		}
+
+		&::before {
+			top: -8px;
+		}
+
+		&::after {
+			bottom: -8px;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		& span{
+			&,
+			&::before,
+			&::after {
+				background-color: white;
+			}
+		}
+	}
+
+	&.is-active {
+		/*border: 1px solid white;*/
+
+		&:hover,
+		&:focus {
+			border-color: white;
+		}
+
+		& span {
+			background-color: transparent;
+			transform: translate(-50%, -50%) rotateY(180deg);
+
+			&::before {
+				transform: translate3d(0,8px,0) rotate(45deg);
+			}
+
+			&::after {
+				transform: translate3d(0,-8px,0) rotate(-45deg);
+			}
+		}
+	}
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+}

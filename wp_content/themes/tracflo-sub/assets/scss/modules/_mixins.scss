@@ -1,0 +1,219 @@
+/******************************************************************
+
+Stylesheet: Mixins
+
+******************************************************************/
+
+/*********************
+FONT STACKS
+*********************/
+$sans_serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+
+/*********************
+Grid gutter width
+*********************/
+
+$gutter:            0.75rem;		// 12px
+
+
+/*********************
+Default bottom margin
+
+This is used for paragraphs, 
+lists, and pretty much everywhere 
+as a base to help with vertical rhythm
+*********************/
+
+$margin:            $gutter*2;
+
+
+/*********************
+The golden ratio
+*********************/
+
+$grid_large:        61.803398875;
+$grid_small:        38.196601125;
+
+
+/*********************
+COLORS
+*********************/
+
+$alert_blue:        #d9edf7;
+$alert_green:       #dff0d8;
+$alert_red:         #f2dede;
+$alert_yellow:      #fcf8e3;
+
+$black:             #222;
+$white:             #fff;
+
+$gray:              #999;
+$gray_light:        #EEF0F4;
+$gray_dark:         #58585b;
+$gray_disabled:     #595d65;
+$text_color:        #333;
+
+$blue: #4294ae;
+$green: #55ac4c;
+$red: #f4403e;
+
+$link_color:        #0f50a0;
+$link_hover:        darken($link_color, 10%);
+
+$background:        $white;
+
+
+/*********************
+REUSABLE ITEMS
+*********************/
+
+// INLINE-BLOCK
+// inline-block support for legacy browsers
+@mixin inline-block($position: middle) {
+	display: inline-block;
+	vertical-align: $position;
+	@include old-ie {
+		*display: inline;
+		zoom: 1;
+	}
+}
+
+
+/*********************
+BUTTONS
+*********************/
+
+$button_radius:     4px;
+
+%btn {
+	background-color: #fafafa;
+    background-image: linear-gradient(#fff, #eee);
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.2);
+    color: #555 !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    height: 31px;
+    line-height: 28px;
+    padding: 0 13px;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    text-decoration: none !important;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: auto;
+
+	& .icon {
+		float: right;
+		height: 12px;
+		width: 12px;
+		margin: 8px 0 0 8px;
+	}
+
+	&:hover, &:focus {
+		background-color: #f0f0f0;
+		background-image: linear-gradient(#f8f8f8, #e8e8e8);
+		text-decoration: none;
+	}
+
+	&:active {
+		background: #eee;
+		box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+	}
+
+	&.is-active {
+		background: #eaeaea !important;
+		border-color: #bbb !important;
+		box-shadow: inset 0 1px 4px rgba(0,0,0,0.1) !important;
+		cursor: default !important;
+		outline: 0;
+		text-shadow: 0 1px 0 #fff !important;
+		z-index: 1;
+	}
+}
+
+.button-primary {
+	@extend %btn;
+	background-color: #2e8d11;
+	background-image: linear-gradient(#72c152, #2e8d11);
+	border-color: #237c07;
+	color: #fff !important;
+	font-weight: bold;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+
+	&:hover, &:focus {
+		background-color: #28880a;
+		background-image: linear-gradient(#66b746, #28880a);
+	}
+
+	&:active {
+		background: #2e8d11;
+		box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
+	}
+}
+
+#wp-submit,
+.search-submit,
+.form-submit input,
+.button {
+//.btn {
+	@extend %btn;
+}
+
+
+/*********************
+BREAKPOINTS
+*********************/
+
+// FOR OLD IE
+$old-ie:			false !default;
+$ignore-mqs:		false !default;
+
+// BREAK POINTS
+$small_width:       30em; // 480px
+$small:				"screen and (min-width: " + $small_width + ")";
+$medium_width:      48em; // 768px
+$medium:			"screen and (min-width: " + $medium_width + ")";
+$mediumMax:         "screen and (max-width: " + ($medium_width - 1) + ")";
+$header_width:      59em; // 944px
+$header:			"screen and (min-width: " + $header_width + ")";
+$large_width:       64em; // 1024px
+$large:				"screen and (min-width: " + $large_width + ")";
+$xlarge_width:      90em; // 1440px
+$xlarge:			"screen and (min-width: " + $xlarge_width + ")";
+
+@mixin breakpoint($point) {
+	@if $ignore-mqs or $old-ie {
+		@if $old-ie and $point == xlarge {
+
+		}
+		@else {
+			@content; // output all content passed in
+		}
+	}
+	@else {
+		@if $point == xlarge {
+			@media #{$xlarge} { @content; }	// output xlarge screen content
+		}
+		@if $point == large {
+			@media #{$large} { @content; }  // output large screen content
+		}
+		@if $point == medium {
+			@media #{$medium} { @content; } // output medium screen content
+		}
+		@if $point == mediumMax {
+			@media #{$mediumMax} { @content; } // output medium screen content
+		}
+		@if $point == small {
+			@media #{$small} { @content; }  // output small screen content
+		}
+		@else {
+			@media #{$point} { @content; }  // add a custom size manually
+		}
+	}
+}

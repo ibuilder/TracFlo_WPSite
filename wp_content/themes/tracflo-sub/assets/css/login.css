@@ -1,0 +1,170 @@
+/******************************************************************
+
+Stylesheet: Login Screen
+
+******************************************************************/
+/* import mixins */
+/******************************************************************
+
+Stylesheet: Mixins
+
+******************************************************************/
+/*********************
+FONT STACKS
+*********************/
+/*********************
+Grid gutter width
+*********************/
+/*********************
+Default bottom margin
+
+This is used for paragraphs, 
+lists, and pretty much everywhere 
+as a base to help with vertical rhythm
+*********************/
+/*********************
+The golden ratio
+*********************/
+/*********************
+COLORS
+*********************/
+/*********************
+REUSABLE ITEMS
+*********************/
+/*********************
+BUTTONS
+*********************/
+.button-primary, #wp-submit,
+.search-submit,
+.form-submit input,
+.button {
+  background-color: #fafafa;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background-image: linear-gradient(#fff, #eee);
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  color: #555 !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  height: 31px;
+  line-height: 28px;
+  padding: 0 13px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  text-decoration: none !important;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto; }
+  .button-primary .icon, #wp-submit .icon, .search-submit .icon, .form-submit input .icon, .button .icon {
+    float: right;
+    height: 12px;
+    width: 12px;
+    margin: 8px 0 0 8px; }
+  .button-primary:hover, #wp-submit:hover,
+  .search-submit:hover,
+  .form-submit input:hover,
+  .button:hover, .button-primary:focus, #wp-submit:focus,
+  .search-submit:focus,
+  .form-submit input:focus,
+  .button:focus {
+    background-color: #f0f0f0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#e8e8e8));
+    background-image: linear-gradient(#f8f8f8, #e8e8e8);
+    text-decoration: none; }
+  .button-primary:active, #wp-submit:active,
+  .search-submit:active,
+  .form-submit input:active,
+  .button:active {
+    background: #eee;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
+  .is-active.button-primary, .is-active#wp-submit,
+  .is-active.search-submit,
+  .form-submit input.is-active,
+  .is-active.button {
+    background: #eaeaea !important;
+    border-color: #bbb !important;
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+    cursor: default !important;
+    outline: 0;
+    text-shadow: 0 1px 0 #fff !important;
+    z-index: 1; }
+
+.button-primary {
+  background-color: #2e8d11;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#72c152), to(#2e8d11));
+  background-image: linear-gradient(#72c152, #2e8d11);
+  border-color: #237c07;
+  color: #fff !important;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4); }
+  .button-primary:hover, .button-primary:focus {
+    background-color: #28880a;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#66b746), to(#28880a));
+    background-image: linear-gradient(#66b746, #28880a); }
+  .button-primary:active {
+    background: #2e8d11;
+    -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2); }
+
+/*********************
+BREAKPOINTS
+*********************/
+body.login {
+  background: #fff; }
+
+/*
+Logo above login form
+*/
+.login h1 a {
+  background: url(../img/logo-login.jpg) no-repeat top center;
+  background-size: contain;
+  display: block;
+  height: 83px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -9999px;
+  width: 320px; }
+
+.center, .center p {
+  text-align: center; }
+
+#login .headline {
+  padding: 20px 0 0; }
+  #login .headline p {
+    margin-bottom: 10px !important; }
+
+#backtoblog {
+  display: none; }
+
+#nav a {
+  cursor: pointer; }
+
+form {
+  margin-left: 8px;
+  padding: 26px 24px 46px;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #EEF0F4;
+  border-radius: 4px;
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
+.login form .input, .login input[type=text],
+body form .input {
+  font-size: 1em;
+  height: 3em;
+  line-height: 2.5em; }
+
+#wp-submit {
+  background-color: #0f50a0; }
+  #wp-submit:hover, #wp-submit:focus {
+    background-color: #0b3971; }
+  #wp-submit:active {
+    background-color: #0d4489; }

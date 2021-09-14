@@ -1,0 +1,90 @@
+.dropdown {
+	background-color: #fff;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+	color: #333;
+	cursor: default;
+	display: inline-block;
+	line-height: 1.5;
+	margin: 4px 0 0 0;
+	max-width: 300px;
+	min-width: 100px;
+	opacity: 0;
+	padding: 7px 0;
+	position: absolute;
+	text-align: left;
+	transition: opacity 0.2s, visibility 0.2s;
+	visibility: hidden;
+	z-index: 1001;
+
+	& a {
+		background: transparent;
+		border: 0;
+		color: inherit;
+		cursor: pointer;
+		display: block;
+		font-family: inherit;
+		font-size: 13px;
+		line-height: 1;
+		padding: 7px 15px;
+		text-align: left;
+		text-decoration: none;
+		width: 100%;
+		white-space: nowrap;
+
+		&:hover {
+			background: #347bd3;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+
+	&:before {
+		border-bottom: 10px solid #a4a4a4;
+		margin: -10px 0 0 -10px;
+	}
+
+	&:after {
+		border-bottom: 10px solid #fff;
+		margin: -9px 0 0 -10px;
+	}
+
+	&:before,
+	&:after {
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		content: '';
+		height: 0;
+		left: 50%;
+		position: absolute;
+		top: 0;
+		width: 0;
+	}
+
+	&.is-left {
+		left: 0;
+
+		&:before,
+		&:after {
+			left: 12px;
+			margin-left: 0;
+		}
+	}
+
+	&.is-right {
+		left: auto !important;
+		right: 0;
+
+		&:before,
+		&:after {
+			left: auto;
+			margin-left: 0;
+			right: 12px;
+		}
+	}
+
+	&.is-visible {
+		transition: none;
+	}
+}

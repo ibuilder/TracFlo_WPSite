@@ -1,0 +1,28 @@
+nav {
+	margin: 0;
+
+	li {
+		a {
+			color: white;
+			display: block;
+			text-decoration: none;
+			padding: $gutter;
+		}
+
+// 		&.current-menu-item a,
+		&:hover > a,
+		a:focus,
+		a:hover {
+			background: $link_hover;
+			color: $white;
+		}
+	}
+
+	@include breakpoint(medium)
+	{
+		li {
+			float: left;
+			position: relative;
+		}
+	}
+}

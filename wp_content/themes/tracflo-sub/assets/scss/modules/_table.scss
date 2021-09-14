@@ -1,0 +1,142 @@
+table {
+	width: 100%;
+}
+
+.tableWrapper {
+	overflow-x: auto;
+	width: 100%;
+
+	@include breakpoint(medium) {
+		overflow: visible;
+	}
+}
+
+.table:not(.acf-table) {
+	min-width: 500px;
+	width: auto;
+
+	& tr.attached {
+		& td {
+			background: #daf2d7;
+		}
+	}
+
+	& th,
+	& td {
+		border-bottom: 1px solid #ccc;
+		padding-left: 7px;
+		padding-right: 7px;
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	& th {
+		background: #f2f2f2;
+		border: solid #ccc;
+		border-width: 1px 0;
+		color: #777;
+		font-size: 11px;
+		font-weight: 500;
+		padding-bottom: 7px;
+		padding-top: 7px;
+		text-align: right;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+	& .col-status {
+		text-align: right !important;
+	}
+	& th.col-name {
+		text-transform: uppercase;
+	}
+
+	& td {
+		font-size: 14px;
+		padding-bottom: 12px;
+		padding-top: 12px;
+		text-align: right;
+	}
+	& .col-name {
+		text-align: left;
+		white-space: normal;
+		word-break: break-word;
+		a {
+			text-decoration: none;
+		}
+	}
+
+	& .col-meter {
+		width: 15%;
+	}
+
+	& th.col-meter-key {
+		padding-left: 23px;
+		position: relative;
+		text-align: center;
+
+		&::before {
+			background: #1fb9e4 !important;
+			box-shadow: inset 0 0 0 1000px #1fb9e4;
+			content: '';
+			display: inline-block;
+			height: 8px;
+			//left: 7px;
+			overflow: hidden;
+			//position: absolute;
+			-webkit-print-color-adjust: exact;
+		    print-color-adjust: exact;
+			//top: 50%;
+			//transform: translateY(-50%);
+			width: 8px;
+		}
+
+		&.col-meter-paymentstatus {
+			&::before {
+				background: #1fb9e4;
+				box-shadow: inset 0 0 0 1000px #1fb9e4;
+				-webkit-print-color-adjust: exact;
+			    print-color-adjust: exact;
+			}
+		}
+	}
+
+	& .col-action {
+		& .filter-menu {
+			margin: 0;
+			& .button {
+				height: 25px;
+				line-height: 23px;
+				padding: 0 6px;
+				width: 80px;
+				& span {
+					float: left;
+				}
+				& svg {
+					margin: 6px 0 0 0;
+				}
+			}
+		}
+	}
+
+	& tfoot tr:last-child td {
+		border-bottom: 0;
+	}
+
+	.big_link {
+		text-align: left;
+		white-space: normal;
+		word-break: break-word;
+	}
+
+	&.project-overview-table {
+		& .col-client {
+			width: 17%;
+			white-space: normal;
+		}
+	}
+}
+
+.dashboard-recent-activity table {
+	min-width: 0 !important;
+	width: 100% !important;
+}

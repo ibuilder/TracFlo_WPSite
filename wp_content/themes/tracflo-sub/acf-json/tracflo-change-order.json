@@ -1,0 +1,811 @@
+{
+    "key": "tracflo-change-order",
+    "title": "Change Order Information",
+    "fields": [
+        {
+            "key": "field_590f8e495716a",
+            "label": "Change Order Number",
+            "name": "number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5910e3becdb1b",
+            "label": "Client CO Number",
+            "name": "number_client",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5907ea04fedf2",
+            "label": "Subject",
+            "name": "subject",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58d52a2401793",
+            "label": "Project",
+            "name": "project",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_3",
+                "id": ""
+            },
+            "post_type": [
+                "project"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_58d52a2401870",
+            "label": "Date",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_3",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_58eb65a2e195f",
+            "label": "Upload RFP",
+            "name": "rfp",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_3",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "uploadedTo",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_58d52b7583166",
+            "label": "Scope of Work",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_58e9286c1bba6",
+            "label": "Exclusion",
+            "name": "exclusion",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_58fe1d38f3774",
+            "label": "Type",
+            "name": "type",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "time": "Time & Materials",
+                "sum": "Lump Sum (Rates)",
+                "total": "Lump Sum (Total)"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "time",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_593f011763b75",
+            "label": "Total",
+            "name": "manual_total",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "==",
+                        "value": "total"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "$",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_58d52b4483165",
+            "label": "Add Tickets",
+            "name": "tickets",
+            "type": "relationship",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "==",
+                        "value": "time"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ticket"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": 1,
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_58fe1dbef3775",
+            "label": "Labor Breakdown",
+            "name": "breakdowns_labor",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "!=",
+                        "value": "time"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_58fe1df1f3776",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Labor",
+            "sub_fields": [
+                {
+                    "key": "field_58fe1df1f3776",
+                    "label": "Labor Type",
+                    "name": "type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Foreman": "Foreman",
+                        "Carpenters": "Carpenters",
+                        "Tapers": "Tapers"
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_58fe1dfef3777",
+                    "label": "Headcount",
+                    "name": "quantity",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Headcount",
+                    "prepend": "",
+                    "append": "",
+                    "min": 1,
+                    "max": "",
+                    "step": 1
+                },
+                {
+                    "key": "field_58fe1e09f3778",
+                    "label": "Hours (per person)",
+                    "name": "hours",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Hours (per person)",
+                    "prepend": "",
+                    "append": "hrs",
+                    "min": 1,
+                    "max": "",
+                    "step": ".25"
+                },
+                {
+                    "key": "field_58fe1e4ff3779",
+                    "label": "Rate (per hour)",
+                    "name": "rate",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Rate (per hour)",
+                    "prepend": "$",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_58fe1e8af377a",
+            "label": "Add Markups",
+            "name": "markups_labor",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "==",
+                        "value": "sum"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_58fe1ec8f377c",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Markup",
+            "sub_fields": [
+                {
+                    "key": "field_58fe1eb7f377b",
+                    "label": "Description",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_2",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Description",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_58fe1ec8f377c",
+                    "label": "Amount",
+                    "name": "amount",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_2",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "Amount",
+                    "prepend": "",
+                    "append": "%",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5907f33d12340",
+            "label": "Material Breakdown",
+            "name": "breakdowns_material",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "!=",
+                        "value": "time"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Equipment",
+            "sub_fields": [
+                {
+                    "key": "field_5907f33d12341",
+                    "label": "Material Type",
+                    "name": "type",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Material Type",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5907f33d12342",
+                    "label": "Quantity",
+                    "name": "quantity",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Quantity",
+                    "prepend": "",
+                    "append": "",
+                    "min": 1,
+                    "max": "",
+                    "step": 1
+                },
+                {
+                    "key": "field_5907f33d12343",
+                    "label": "Unit of Measure",
+                    "name": "unit",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Unit of Measure",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5907f33d12344",
+                    "label": "Rate (per unit)",
+                    "name": "rate",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Rate (per unit)",
+                    "prepend": "$",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5907efc010dd4",
+            "label": "Add Markups",
+            "name": "markups_material",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "==",
+                        "value": "sum"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Markup",
+            "sub_fields": [
+                {
+                    "key": "field_5907efc010dd5",
+                    "label": "Description",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_2",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Description",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5907efc010dd6",
+                    "label": "Amount",
+                    "name": "amount",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_2",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "Amount",
+                    "prepend": "",
+                    "append": "%",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5907f0fe10dd7",
+            "label": "Equipment Breakdown",
+            "name": "breakdowns_equipment",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "!=",
+                        "value": "time"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Equipment",
+            "sub_fields": [
+                {
+                    "key": "field_5907f0ff10dd8",
+                    "label": "Equipment Type",
+                    "name": "type",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Equipment Type",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5907f0ff10dd9",
+                    "label": "Quantity",
+                    "name": "quantity",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Quantity",
+                    "prepend": "",
+                    "append": "",
+                    "min": 1,
+                    "max": "",
+                    "step": 1
+                },
+                {
+                    "key": "field_5907f0ff10dda",
+                    "label": "Unit of Measure",
+                    "name": "unit",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Unit of Measure",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5907f0ff10ddb",
+                    "label": "Rate (per unit)",
+                    "name": "rate",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Rate (per unit)",
+                    "prepend": "$",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5907f10910ddc",
+            "label": "Add Markups",
+            "name": "markups_equipment",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58fe1d38f3774",
+                        "operator": "==",
+                        "value": "sum"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Markup",
+            "sub_fields": [
+                {
+                    "key": "field_5907f10910ddd",
+                    "label": "Description",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_2",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Description",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5907f10910dde",
+                    "label": "Amount",
+                    "name": "amount",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_2",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "Amount",
+                    "prepend": "",
+                    "append": "%",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "co"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1504266512
+}

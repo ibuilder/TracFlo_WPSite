@@ -1,0 +1,123 @@
+#container {
+	transition: all 0.3s ease-in-out 0.1s;
+	transition: translateX(0);
+}
+
+@include breakpoint(mediumMax) {
+body.is-navOpen {
+	& #container {
+		transform: translateX(180px);
+	}
+
+	& .NavOverlay {
+		opacity: 0.75;
+		z-index: 99;
+	}
+}
+}
+
+.NavOverlay {
+	background-color: black;
+	bottom: 0;
+	display: block;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: opacity 0.5s linear 0.2s;
+	z-index: -10;
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+
+.NavContainer {
+	background: $blue;
+	color: white;
+	height: 100vh;
+	overflow: hidden;
+	padding: 2rem ($gutter / 2) 0;
+	transform: translateX(-180px);
+	width: 180px;
+	z-index: 101;
+
+	@include breakpoint(medium) {
+		background: transparent;
+		display: inline-block;
+		height: auto;
+		margin: 0 auto;
+		padding: 0;
+		text-align: right;
+		transition: none;
+		transform: none;
+		width: 100%;
+		z-index: 1;
+	}
+}
+
+.NavMain {
+	margin-bottom: $gutter;
+
+	& a {
+		color: $white;
+		font-weight: 300;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+
+	&-list {
+		list-style: none;
+		margin: 0;
+		padding: 0 $gutter;
+		text-align: left;
+	
+		& svg {
+			height: auto;
+			margin: -2px 4px 0 0;
+			width: 18px;
+		}
+	
+		& li {
+			padding: 0;
+		}
+
+		&::after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+	}
+
+	@include breakpoint(medium) {
+		display: inline-block;
+		float: left;
+		font-size: 0.875em;
+		font-weight: bold;
+		margin: 0;
+		padding: 0.3125rem 0 0;
+		text-align: left;
+		width: auto;
+
+		&-list {
+			display: inline-block;
+			padding: 0 3px;
+			text-align: left;
+			text-transform: uppercase;
+
+			& li {
+				display: inline-block;
+				padding: 0;
+			}
+
+			& a {
+				display: inline-block;
+			}
+		}
+	}
+}

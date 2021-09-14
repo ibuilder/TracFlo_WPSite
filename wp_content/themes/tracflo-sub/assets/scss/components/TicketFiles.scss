@@ -1,0 +1,59 @@
+.TicketFiles {
+	clear: both;
+	display: flex;
+	padding: $margin 0;
+	width: 100%;
+
+	&-item {
+		text-align: center;
+		width: 203px;
+
+		&:not(:last-child) {
+			margin-right: $gutter;
+		}
+		&:not(:first-child) {
+			margin-left: $gutter;
+		}
+	}
+
+	&-name {
+		font-size: 10px;
+		font-weight: bold;
+		hyphens: auto;
+		line-height: 1.25;
+		margin-bottom: ($gutter / 2);
+		min-height: 25px;
+		word-break: break-all;
+		/* webkit: */
+		word-break: break-word;
+		/* technically the same, but use both: */
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	}
+
+	&-file {
+		height: 120px;
+		margin-bottom: $gutter;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+	}
+
+	&-link {
+		display: block;
+	}
+
+	&-img {
+		display: block;
+		height: auto;
+		left: 50%;
+		max-width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&-content {
+		width: 100%;
+	}
+}

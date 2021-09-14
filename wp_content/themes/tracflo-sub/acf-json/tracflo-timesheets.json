@@ -1,0 +1,147 @@
+{
+    "key": "tracflo-timesheets",
+    "title": "Timesheet Information",
+    "fields": [
+        {
+            "key": "field_5c8b64bf6563f",
+            "label": "Project",
+            "name": "project",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "post_type": [
+                "project"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5c8b64bf656a8",
+            "label": "Work Date",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-medium-1_2",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_5c8b64bf6598f",
+            "label": "Worker Hours",
+            "name": "worker_hours",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5c8b64bf7d138",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Worker",
+            "sub_fields": [
+                {
+                    "key": "field_5c8b64bf7d138",
+                    "label": "Worker",
+                    "name": "worker",
+                    "type": "user",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_2",
+                        "id": ""
+                    },
+                    "role": [
+                        "trac_worker",
+                        "trac_foreman"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_5c8b64bf7d35b",
+                    "label": "Hours",
+                    "name": "hours",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": 8,
+                    "placeholder": "Hours (per person)",
+                    "prepend": "",
+                    "append": "hrs",
+                    "min": 0,
+                    "max": "",
+                    "step": ".25"
+                },
+                {
+                    "key": "field_5cb9ec6038f86",
+                    "label": "Overtime",
+                    "name": "overtime",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "is-medium-1_4",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "Hours (per person)",
+                    "prepend": "",
+                    "append": "hrs",
+                    "min": 0,
+                    "max": "",
+                    "step": ".25"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "timesheet"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1552844394
+}

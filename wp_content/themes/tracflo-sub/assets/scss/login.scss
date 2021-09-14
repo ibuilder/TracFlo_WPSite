@@ -1,0 +1,84 @@
+/******************************************************************
+
+Stylesheet: Login Screen
+
+******************************************************************/
+
+/* import mixins */
+@import "modules/mixins";
+//@import "modules/forms";
+
+body.login {
+	background: #fff;
+	//background-image: linear-gradient(#333, #000);
+}
+
+/*
+Logo above login form
+*/
+.login h1 a {
+	background: url(../img/logo-login.jpg) no-repeat top center;
+	background-size: contain;
+	display: block;
+	height: 83px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -9999px;
+	width: 320px;
+}
+
+.center {
+	&, & p {
+		text-align: center;
+	}
+}
+
+#login .headline {
+	padding: 20px 0 0;
+
+	& p {
+		margin-bottom: 10px !important;
+	}
+}
+
+#backtoblog {
+	display: none;
+}
+
+#nav a {
+	cursor: pointer;
+}
+
+
+form {
+	margin-left: 8px;
+	padding: 26px 24px 46px;
+	font-weight: normal;
+	background: $white;
+	border: 1px solid $gray_light;
+	border-radius: 4px;
+	box-shadow: none;
+}
+
+.login form .input, .login input[type=text], 
+body form .input {
+	font-size: 1em;
+	height: 3em;
+	line-height: 2.5em;
+}
+
+#wp-submit {
+	@extend %btn;
+	background-color: $link_color;
+
+	&:hover,
+	&:focus {
+		background-color: $link_hover;
+	}
+
+	&:active {
+		background-color: darken($link_color, 5%);
+	}
+}
+
